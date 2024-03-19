@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file    i2c.c
-  * @brief   This file provides code for the configuration
-  *          of the I2C instances.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    i2c.c
+ * @brief   This file provides code for the configuration
+ *          of the I2C instances.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "i2c.h"
@@ -25,9 +25,7 @@
 /* USER CODE END 0 */
 
 /* I2C1 init function */
-void MX_I2C1_Init(void)
-{
-
+void MX_I2C1_Init(void) {
   /* USER CODE BEGIN I2C1_Init 0 */
 
   /* USER CODE END I2C1_Init 0 */
@@ -38,11 +36,10 @@ void MX_I2C1_Init(void)
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the peripherals clocks
-  */
+   */
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_I2C1;
   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
-  {
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK) {
     Error_Handler();
   }
 
@@ -79,7 +76,7 @@ void MX_I2C1_Init(void)
   /* USER CODE END I2C1_Init 1 */
 
   /** I2C Initialization
-  */
+   */
   I2C_InitStruct.PeripheralMode = LL_I2C_MODE_I2C;
   I2C_InitStruct.Timing = 0x00602173;
   I2C_InitStruct.AnalogFilter = LL_I2C_ANALOGFILTER_ENABLE;
@@ -96,7 +93,6 @@ void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
-
 }
 
 /* USER CODE BEGIN 1 */

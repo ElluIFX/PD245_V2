@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file    gpio.c
-  * @brief   This file provides code for the configuration
-  *          of all used GPIO pins.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    gpio.c
+ * @brief   This file provides code for the configuration
+ *          of all used GPIO pins.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -33,10 +33,8 @@
 /* USER CODE END 1 */
 
 /** Configure pins
-*/
-void MX_GPIO_Init(void)
-{
-
+ */
+void MX_GPIO_Init(void) {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
@@ -49,8 +47,10 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(CH224K_CFG1_GPIO_Port, CH224K_CFG1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, CH224K_CFG2_Pin|CH224K_CFG3_Pin|KEY_M_Pin|KEY_D_Pin
-                          |OLED_RESET_Pin|OLED_DC_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA,
+                    CH224K_CFG2_Pin | CH224K_CFG3_Pin | KEY_M_Pin | KEY_D_Pin |
+                        OLED_RESET_Pin | OLED_DC_Pin,
+                    GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(KEY_L_GPIO_Port, KEY_L_Pin, GPIO_PIN_RESET);
@@ -73,15 +73,15 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PAPin PAPin PAPin PAPin
                            PAPin PAPin */
-  GPIO_InitStruct.Pin = CH224K_CFG2_Pin|CH224K_CFG3_Pin|KEY_M_Pin|KEY_D_Pin
-                          |OLED_RESET_Pin|OLED_DC_Pin;
+  GPIO_InitStruct.Pin = CH224K_CFG2_Pin | CH224K_CFG3_Pin | KEY_M_Pin |
+                        KEY_D_Pin | OLED_RESET_Pin | OLED_DC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin */
-  GPIO_InitStruct.Pin = KEY_U_Pin|KEY_R_Pin;
+  GPIO_InitStruct.Pin = KEY_U_Pin | KEY_R_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -111,7 +111,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(HALL_GPIO_Port, &GPIO_InitStruct);
-
 }
 
 /* USER CODE BEGIN 2 */
